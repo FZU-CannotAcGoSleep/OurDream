@@ -43,6 +43,18 @@ ac自动机套数位dp，大胆魔改数位dp；实质仍是安全图问题，�
 
 还需要知道i+1的，字符串翻转一下再做一遍即可，乘法原理累加答案。
 
+### 21黑龙江省赛E Elastic Search
+
+考虑trie图上dp，显然i的值只能由fail[i]和fa[i]转移过来，dp[i][1]表示从根节点到i点在fail树上跳过一次的最长答案，dp[i][0]表示从根节点到i没跳过的方案
+
+则转移有：
+$$dp[v][1]=max(dp[u][1],max(dp[fail[v]][0],dp[fail[v]][1]))+trie[v].flag;
+	dp[v][0]=dp[u][0]+trie[v].flag;
+  ret=max(ret,max(dp[v][0],dp[v][1]));
+  return ret;
+$$
+
+
 
 
 
