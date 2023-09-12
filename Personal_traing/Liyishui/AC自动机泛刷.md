@@ -50,7 +50,9 @@ ac自动机套数位dp，大胆魔改数位dp；实质仍是安全图问题，�
 则转移有：
 $$dp[v][1]=max(dp[u][1],max(dp[fail[v]][0],dp[fail[v]][1]))+trie[v].flag;
 	dp[v][0]=dp[u][0]+trie[v].flag;
+ 
   ret=max(ret,max(dp[v][0],dp[v][1]));
+ 
   return ret;
 $$
 
